@@ -1,7 +1,7 @@
+# 运行时依赖
+# pyautogui / pygetwindow 已不再使用，故移除；websockets 需 >=13（用到 websockets.asyncio）
 requests>=2.31.0
-pyautogui>=0.9.54
-pyperclip>=1.8.2
-pygetwindow>=0.0.9
+websockets>=13.0
 uiautomation>=2.0.17
+pyperclip>=1.8.2
 Pillow>=10.0.0
-websockets>=12.0
