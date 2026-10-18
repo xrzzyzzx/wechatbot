@@ -1,0 +1,48 @@
+{
+    "_说明": "复制本文件为 config.json 后逐项填写。也可以直接运行「首次配置.bat」，向导会问你几个问题并自动生成 config.json。",
+
+    "weflow_base_url": "http://127.0.0.1:5031",
+    "access_token": "【必填】WeFlow 的 API Access Token",
+
+    "bot_wxid": "【必填】机器人微信的 wxid（例如 wxid_xxxxxxxxxxxx）",
+    "bot_nicknames": [
+        "【必填】机器人微信的昵称"
+    ],
+
+    "astrbot_ob_url": "ws://127.0.0.1:11229/ws",
+    "astrbot_attachments": "",
+
+    "web_port": 8766,
+    "buffer_seconds": 5,
+
+    "group_reply_mode": "mention",
+    "all_mode_groups": [],
+    "wake_words": [],
+
+    "image_caption_provider": "ollama",
+    "image_caption_model": "llava:7b",
+    "image_caption_api_key": "",
+    "image_caption_api_base": "",
+    "image_caption_prompt": "请用中文简短描述这张图片的内容；如果图中有文字，请一并写出关键文字。",
+
+    "ollama_base_url": "http://127.0.0.1:11434",
+    "ollama_timeout": 60,
+
+    "_字段说明": {
+        "weflow_base_url": "WeFlow 的 HTTP API 地址，默认端口 5031",
+        "access_token": "WeFlow 设置里生成的 Access Token，用于调用它的 API",
+        "bot_wxid": "机器人这个微信号的 wxid，决定 OneBot 侧的 self_id",
+        "bot_nicknames": "机器人在微信里的昵称，多个写多个，用于识别自己发的消息",
+        "astrbot_ob_url": "AstrBot aiocqhttp 服务端地址，格式 ws://主机:端口/ws",
+        "astrbot_attachments": "可选。AstrBot 的 attachments 目录，用于把图片转成本地路径；留空则用 base64 直传",
+        "web_port": "本地网页面板端口，浏览器打开 http://127.0.0.1:<端口>",
+        "buffer_seconds": "消息合并秒数：同一人多条短消息在这个窗口内合并成一条再送 AI",
+        "group_reply_mode": "mention = 只有 @机器人 / 句首斜杠 / 命中唤醒词才回；all = 群里所有消息都送 AI",
+        "all_mode_groups": "group_reply_mode=all 时，只对这些群生效；留空表示所有群",
+        "wake_words": "默认唤醒词，新建的群白名单会继承它；每群的唤醒词可在 nicks/<群名>.json 里单独改",
+        "image_caption_provider": "图片描述后端：ollama 本地模型，或 openai 表示任意 OpenAI 兼容接口",
+        "image_caption_api_key": "provider=openai 时填；provider=ollama 时留空",
+        "image_caption_api_base": "provider=openai 时的 base_url，例如 https://api.deepseek.com/v1",
+        "ollama_base_url": "provider=ollama 时的 Ollama 地址"
+    }
+}
